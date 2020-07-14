@@ -115,7 +115,7 @@ async function upload(path) {
     console.log('m3u8文件上传成功')
  
     // 构造在线播放地址
-    //let playUrl = "";
+    let playUrl = "";
     console.log('==============================')
  
     // 清空文件缓存
@@ -127,6 +127,6 @@ async function upload(path) {
 	
 	// 将视频链接存到本地,免得不小心关闭控制框就完了
 	let nTime = new Date().getTime() + "";
-	let strTime = nTime.slice(nTime.length-8);
+	let strTime = nTime.slice(nTime.length - 5);
 	fs.writeFileSync(`./result/` + videoDir + strTime +".txt", "m3u8在线链接：" + m3u8Url);
 })()
